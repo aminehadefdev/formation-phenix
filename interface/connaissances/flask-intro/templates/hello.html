@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="message">
+  <h2>{{ message }}</h2>
+</div>
+
+<div class="content">
+  <p>
+    Cette application Flask est maintenant opérationnelle ! Voici quelques
+    fonctionnalités :
+  </p>
+
+  <ul class="features">
+    <li>Base de données SQLite configurée</li>
+    <li>Templates HTML avec Jinja2</li>
+    <li>Routes dynamiques</li>
+    <li>Commande d'initialisation de la DB</li>
+    <li>🔐 Système d'authentification complet</li>
+    <li>👤 Gestion des utilisateurs</li>
+  </ul>
+</div>
+
+<div class="links">
+  <a href="/" class="btn">Accueil</a>
+  <a href="/hello" class="btn">Hello</a>
+  <a href="/hello/Flask" class="btn">Hello Flask</a>
+  <a href="/hello/Python" class="btn">Hello Python</a>
+  {% if g.user %}
+    <a href="{{ url_for('profile') }}" class="btn btn-secondary">Profil</a>
+  {% endif %}
+</div>
+{% endblock %}
+</html>

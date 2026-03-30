@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Flask App{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/reset.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/hello.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🌟 Application Flask 🌟</h1>
+        
+        <!-- Navigation -->
+        <nav class="nav">
+          <a href="{{ url_for('index') }}" class="nav-link">Accueil</a>
+          {% if g.user %}
+            <span class="nav-user">Connecté : {{ g.user.username }}</span>
+            <a href="{{ url_for('profile') }}" class="nav-link">Profil</a>
+            <a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a>
+          {% else %}
+            <a href="{{ url_for('login') }}" class="nav-link">Connexion</a>
+            <a href="{{ url_for('register') }}" class="nav-link">Inscription</a>
+          {% endif %}
+        </nav>
+      </div>
+
+      <!-- Messages flash -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for category, message in messages %}
+              <div class="flash-message flash-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <!-- Contenu principal -->
+      {% block content %}{% endblock %}
+
+      <hr class="divider" />
+      <p class="footer">Application créée avec Flask - Framework web Python</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+  <div class="auth-form">
+    <h2>📝 Inscription</h2>
+    <p>Créez votre compte pour accéder à l'application</p>
+    
+    <form method="post" class="form">
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          value="{{ request.form['username'] or '' }}"
+          placeholder="Votre nom d'utilisateur"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value="{{ request.form['email'] or '' }}"
+          placeholder="votre@email.com"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Votre mot de passe"
+        />
+      </div>
+      
+      <button type="submit" class="btn btn-primary">S'inscrire</button>
+    </form>
+    
+    <div class="auth-links">
+      <p>Vous avez déjà un compte ? <a href="{{ url_for('login') }}">Connectez-vous</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
