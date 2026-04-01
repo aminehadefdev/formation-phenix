@@ -63,6 +63,10 @@ Leur dire de refaire tout ca pour une nouvelle table qu'il créeront eux-même, 
 
 La base est normalement comprise à cette étape là. C'est l'occasion de rajouter des points un peu chaque jour:
 
+### Blueprints
+
+- Refactoriser le code pour utiliser des blueprints pour users, posts, puis la troisième table
+
 ### base.html
 
 - Refactoriser le code pour utiliser un base.html

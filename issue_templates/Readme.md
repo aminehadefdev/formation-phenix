@@ -20,8 +20,10 @@ pip download --dest offline-packages -r requirements.txt
 
 ### Using pipenv
 
-- Create .env from .env.example : `cp .env.example .env`
-- Fill in all env variable but PROJECT_ID that will be found using the script
+- Create .env from .env.example `cp .env.example .env`
+- Fill in all env variable
+  - for gitlab, the PROJECT_ID that will be found using the script
+  - for github, create a "Fined grained personal access token" with "Read and write" access to "Issues"
 - Activate pipenv env : `pipenv shell`
 - Install dependencies `pipenv install`
 
