@@ -24,10 +24,12 @@ cv_4_sienna_accessibility.md
 terminal_3_customiser.md
 terminal_4_zsh.md
 terminal_5_series_ls_cd.md
+form_3_mot_de_passe_fort.md
 exo_ctrl_maj_f.md
 exo_dark_theme.md
 css_3_flexbox_difficult.md
-exo_animations.md
+animations_1.md
+animations_2.md
 exo_js_dom.md
 exo_js_fruit.md
 exo_dice_roller.md
