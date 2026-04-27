@@ -118,6 +118,26 @@ Mais à l’intérieur de l’objet, on utilise this.name.
 ⚠️ Important :
 On ne peut pas utiliser directement obj.name dans une classe, car le nom de l’objet peut changer. C’est pour ça qu’on utilise this.
 
+Exemple : 
+```javascript
+class obj{
+    constructor(){
+        obj.name = "amine"
+    }
+}
+console.log(new obj());
+```
+Dans l’exemple ci-dessus, ça ne va pas fonctionner, mais vous allez avoir l’erreur Uncaught TypeError: "name" is read-only dans le navigateur. En revanche, si vous remplacez obj qui est dans le constructeur par this, cela va fonctionner comme ci-dessous.
+
+```javascript
+class obj{
+    constructor(){
+        this.name = "amine"
+    }
+}
+console.log(new obj());
+```
+
 👉 Tu verras souvent que this fait référence à l’objet courant, et c’est vrai.
 
 Il y a toujours un objet en cours, même dans le scope global. Par exemple, dans le navigateur, si tu fais :
@@ -171,6 +191,7 @@ une méthode isAdult() qui affiche :
 
 width et height
 une méthode getArea() qui retourne l’aire
+Rappel : pour calculer l’aire d’un rectangle, on doit faire largeur multipliée par la hauteur.
 
 👉 Exemple attendu :
 ```javascript
